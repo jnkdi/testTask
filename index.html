@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./node_modules/intl-tel-input/build/css/intlTelInput.css">
     <title>TestTask</title>
   </head>
   <body>
@@ -91,8 +92,45 @@
                 <div class="features__light-circle"></div>
             </div>
         </div>
-    </section>
+      </section>
+      <section class="page__newsletter newsletter">
+        <div class="newsletter__container">
+          <div class="newsletter__text">
+            <h2 class="newsletter__heading">Sign up for our newsletter</h2>
+            <p class="newsletter__subheading">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint velit officia consequat duis enim velit mollit.</p>  
+          </div>
+          <form action="" class="newsletter__form">
+            <div class="newsletter__inputs">
+              <input type="text" placeholder="Your name" class="newsletter__input">
+              <input type="text" placeholder="Your surname" class="newsletter__input">
+              <input type="text" placeholder="Your mail" class="newsletter__input">
+              <input type="tel" id="phone" class="newsletter__input">
+            </div>
+            <label class="newsletter__checkbox-container">Ich gebe mein Einverständnis
+              und bestätige, dass ich nach der Anmeldung den Anruf des Finanzberaters des Unternehmens
+              entgegennehme.
+              <input type="checkbox" class="newsletter__checkbox">
+              <span class="newsletter__checkmark"></span>
+            </label>
+            <button class="newsletter__button">Registrate</button>
+          </form>
+        </div>
+      </section>
     </main>
     <script src="js/burger.js"></script>
+    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
+    <script>
+      const input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        initialCountry: "auto",
+  geoIpLookup: callback => {
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => callback(data.country_code))
+      .catch(() => callback("us"));
+  },
+        utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
+      });
+    </script>
   </body>
 </html>

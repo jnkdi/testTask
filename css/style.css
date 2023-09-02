@@ -1,4 +1,5 @@
 @import url("reset.css");
+/* @import url(../node_modules/intl-tel-input/build/css/intlTelInput.css); */
 @import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,700);
 
 :root {
@@ -6,6 +7,7 @@
   --light-color: #ffffff;
   --blue-color: #444bd3;
   --light-blue-color: #5b61d1;
+  --grey-color: #e0e3eb;
 }
 
 /* * {
@@ -570,3 +572,195 @@ body {
     max-width: 450px;
   }
 }
+
+/* ============================================== */
+
+/* ============= NEWSLETTER SECTION ============= */
+
+.newsletter {
+  background-color: var(--blue-color);
+  padding: 96px 0;
+}
+
+.newsletter__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 0 8%;
+}
+
+.newsletter__text {
+  text-align: center;
+  max-width: 575px;
+  color: var(--light-color);
+}
+
+.newsletter__heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 12px;
+}
+
+.newsletter__subheading {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 180%;
+  opacity: 56%;
+}
+
+.newsletter__form {
+  width: 100%;
+  max-width: 416px;
+  background-color: var(--light-color);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter__inputs {
+  margin-bottom: 16px;
+}
+
+.newsletter__input {
+  border-radius: 8px;
+  border: 1px solid var(--grey-color);
+  width: 100%;
+  padding: 15px 0 10px 21px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#phone {
+  padding-left: 100px;
+}
+
+.newsletter__input::placeholder {
+  color: var(--dark-color);
+}
+
+.newsletter__input:focus {
+  outline: none;
+}
+
+.newsletter__checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.newsletter__checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.newsletter__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: var(--grey-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.newsletter__checkbox-container:hover
+  .newsletter__checkbox
+  ~ .newsletter__checkmark {
+  background-color: #ccc;
+}
+
+.newsletter__checkmark:after {
+  content: url(../assets/newsletter/checked-checkbox.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  display: none;
+}
+
+.newsletter__checkbox-container
+  .newsletter__checkbox:checked
+  ~ .newsletter__checkmark:after {
+  display: block;
+}
+
+.newsletter__button {
+  color: var(--light-color);
+  background-color: var(--blue-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 16px 0;
+}
+
+@media (max-width: 767.98px) {
+  .newsletter {
+    padding: 40px 0;
+  }
+  .newsletter__container {
+    gap: 32px;
+    padding: 0 10px;
+  }
+
+  .newsletter__checkbox-container {
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================================ */
+
+/* ============= INT TEL INPUT ============= */
+
+.iti__selected-flag {
+  width: 80px;
+  justify-content: center;
+  padding-left: 18px !important;
+}
+
+.iti__selected-flag::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--grey-color);
+}
+
+.iti__flag {
+  background-image: url("../node_modules/intl-tel-input/build/img/flags.png");
+  width: 100%;
+}
+
+.iti__arrow {
+  margin-left: 8px !important;
+  width: 21px !important;
+  height: 21px !important;
+  border: none !important;
+  background: url(../assets/newsletter/ri_arrow-up-s-line.svg);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../node_modules/intl-tel-input/build/img/flags@2x.png");
+  }
+}
+
+/* ============================================ */
