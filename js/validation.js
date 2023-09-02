@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => callback(data.country_code))
                 .catch(() => callback("us"));
         },
-        utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
     });
 
     const resetPhoneValidation = () => {
