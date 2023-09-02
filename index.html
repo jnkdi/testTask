@@ -11,7 +11,7 @@
     <header class="header">
       <div class="header__container">
         <a href="#" class="header__logo">
-          <img src="assets/logo.svg" alt="logo" />
+          <img src="assets/header/logo.svg" alt="logo" />
         </a>
         <nav class="header__menu menu">
           <div class="menu__body">
@@ -57,22 +57,22 @@
                 <div class="video__play-block">
                   <img
                     class="play-icon"
-                    src="./assets/play-icon.svg"
+                    src="./assets/video/play-icon.svg"
                     alt="play"
                   />
                 </div>
             </div>
-              <img src="./assets/voucher.png" alt="voucher" class="video__image-1" />
+              <img src="./assets/video/voucher.png" alt="voucher" class="video__image-1" />
               <img
-                src="./assets/sent_screen.png"
+                src="./assets/video/sent_screen.png"
                 alt="sent image"
                 class="video__image-2"
               />
           </div>
 
-            <img src="./assets/icon.png" alt="icon" class="video__icon-1" />
-            <img src="./assets/memoji.png" alt="icon" class="video__icon-2" />
-            <img src="./assets/arrow.svg" alt="icon" class="video__icon-3" />
+            <img src="./assets/video/icon.png" alt="icon" class="video__icon-1" />
+            <img src="./assets/video/memoji.png" alt="icon" class="video__icon-2" />
+            <img src="./assets/video/arrow.svg" alt="icon" class="video__icon-3" />
           </div>
         </div>
       </section>
@@ -123,12 +123,12 @@
       const input = document.querySelector("#phone");
       window.intlTelInput(input, {
         initialCountry: "auto",
-  geoIpLookup: callback => {
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => callback(data.country_code))
-      .catch(() => callback("us"));
-  },
+        geoIpLookup: callback => {
+          fetch("https://ipapi.co/json")
+            .then(res => res.json())
+            .then(data => callback(data.country_code))
+            .catch(() => callback("us"));
+        },
         utilsScript: "./node_modules/intl-tel-input/build/js/utils.js"
       });
     </script>
