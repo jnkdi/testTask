@@ -7,6 +7,8 @@
   --light-color: #ffffff;
   --blue-color: #444bd3;
   --light-blue-color: #5b61d1;
+  --red-color: #d15b5b;
+  --light-red-color: #db8d8d;
   --grey-color: #e0e3eb;
 }
 
@@ -711,6 +713,18 @@ body {
   padding: 16px 0;
 }
 
+.invalid {
+  background-color: var(--light-red-color);
+  border: 2px solid var(--light-red-color);
+}
+
+.error-message {
+  color: var(--light-red-color);
+  font-size: 12px;
+  display: none;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 767.98px) {
   .newsletter {
     padding: 40px 0;
@@ -728,6 +742,10 @@ body {
 /* ============================================ */
 
 /* ============= INT TEL INPUT ============= */
+
+.iti {
+  width: 100%;
+}
 
 .iti__selected-flag {
   width: 80px;
